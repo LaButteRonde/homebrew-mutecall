@@ -12,9 +12,17 @@ cask "mutecall" do
 
   app "MuteCall.app"
 
+  # Mise à jour depuis l'app : l'instance en cours est quittée proprement avant le remplacement (TERM en filet),
+  # puis relancée par le postflight.
+  uninstall quit:   "com.lbr.mutecall",
+            signal: ["TERM", "com.lbr.mutecall"]
+
   postflight do
     system_command "/usr/bin/xattr",
       args: ["-dr", "com.apple.quarantine", "#{appdir}/MuteCall.app"],
+      sudo: false
+    system_command "/usr/bin/open",
+      args: ["-a", "#{appdir}/MuteCall.app"],
       sudo: false
   end
 
