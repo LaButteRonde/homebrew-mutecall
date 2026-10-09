@@ -4,8 +4,11 @@ cask "mutecall" do
   
   url "https://github.com/LaButteRonde/homebrew-mutecall/releases/download/v#{version}/MuteCall-darwin-arm64-#{version}.zip"
   name "MuteCall"
-  desc "Global mute/unmute shortcut for Microsoft Teams on macOS"
+  desc "Mute and unmute Microsoft Teams from a global shortcut and the menu bar"
   homepage "https://github.com/LaButteRonde/homebrew-mutecall"
+
+  depends_on macos: ">= :sonoma"
+  depends_on arch: :arm64
 
   app "MuteCall.app"
 
