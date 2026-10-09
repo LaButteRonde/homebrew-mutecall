@@ -1,6 +1,6 @@
 cask "mutecall" do
-  version "2.16.0"
-  sha256 "07d7387544a69473cdd32f0ad68e0857d88aa358ed24d6e9f0665234b006b0bc"
+  version "2.16.1"
+  sha256 "cd36d325f270ef73599209e16acf8a3d9fc232c6f7bcdc4d2073cb6d47a21a6f"
   
   url "https://github.com/LaButteRonde/homebrew-mutecall/releases/download/v#{version}/MuteCall-darwin-arm64-#{version}.zip"
   name "MuteCall"
